@@ -1,5 +1,7 @@
 pipeline {
-    agent 'generic'
+    agent {
+        label 'generic'
+    }
     stages {
         stage("blah") {
             steps {
