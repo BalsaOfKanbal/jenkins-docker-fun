@@ -1,12 +1,22 @@
 pipeline {
     agent {
-        label 'generic'
+        docker {
+            label 'generic'
+            image 'centos'
+        }
     }
     stages {
+        stage("Prepare environment") {
+            steps {
+                sh """
+                yum install python -y
+                """
+            }
+        }
         stage("blah") {
             steps {
                 sh """
-                    docker build .
+                    python helloworld.py
                 """
             }
         }
