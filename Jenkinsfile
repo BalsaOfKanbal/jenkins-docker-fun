@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent 'generic'
     stages {
         stage("blah") {
             steps {
