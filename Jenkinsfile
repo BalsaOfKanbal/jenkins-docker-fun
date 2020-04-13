@@ -9,7 +9,7 @@ pipeline {
         stage("Prepare environment") {
             steps {
                 sh """
-                sudo yum install python -y
+                yum install python -y
                 cat /etc/hostname
                 """
             }
